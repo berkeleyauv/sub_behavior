@@ -1,0 +1,28 @@
+<root main_tree_to_execute="MainTree">
+
+    <BehaviorTree ID="MoveAndShoot">
+        <ReactiveSequence name="move_and_shoot_sequence">
+            <!-- Non-uniform failure probability, good for test halting behavior of action/service -->
+            <!-- Pinged at around 10Hz -->
+            <RandomFailure probability="0.01"/>
+            <!-- Test the action node -->
+            <MoveDistance server_name="/move_distance" server_timeout="0" distances="0 -1 0"/>
+            <!-- Test the service node -->
+            <SnapPhoto server_name="/move_distance" server_timeout="0" distances="0 -1 0"/>
+        </ReactiveSequence>
+    </BehaviorTree>
+
+    <BehaviorTree ID="MainTree">
+        <RepeatNode num_cycles="5">
+            <Sequence>
+                <!-- Test remapping ports between trees -->
+                <RandomDisplacemnt displacement="0 -1 0"/>
+                <!-- Keep this going in case of random failure -->
+                <RetryNode num_attempts="3">
+                    <SubTree ID="MoveAndShoot"/>
+                </RetryNode>
+            </Sequence>
+        </RepeatNode>
+    </BehaviorTree>
+
+</root>

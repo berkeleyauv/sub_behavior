@@ -49,3 +49,7 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+
+# Jetbrains IDEs
+cmake-build-debug
+.idea

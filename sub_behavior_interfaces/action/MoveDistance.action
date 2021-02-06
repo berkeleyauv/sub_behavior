@@ -1,0 +1,8 @@
+# Request
+geometry_msgs/Vector3 distances
+---
+# Result
+bool complete
+---
+# Feedback
+geometry_msgs/Vector3 progress
