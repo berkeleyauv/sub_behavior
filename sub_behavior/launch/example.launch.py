@@ -17,7 +17,8 @@ def generate_launch_description():
             parameters=[
                 {'loop_timeout': loop_timeout},
                 {'bt_file_path': os.path.join(get_package_share_directory('sub_behavior'), 'trees/example.xml')},
-                {'plugins': ['move_distance_bt_node', 'random_failure_bt_node', 'random_displacement_bt_node']}
+                {'plugins': ['move_distance_bt_node', 'random_failure_bt_node', 'random_displacement_bt_node',
+                             'snap_photo_bt_node']}
             ]
         ),
     ])
