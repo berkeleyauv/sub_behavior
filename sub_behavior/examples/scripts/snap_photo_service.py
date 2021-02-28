@@ -4,6 +4,7 @@ from sub_behavior_interfaces.srv import SnapPhoto
 
 import rclpy
 from rclpy.node import Node
+import time
 
 
 class SnapPhotoService(Node):
@@ -15,6 +16,7 @@ class SnapPhotoService(Node):
     def snap_photo_callback(self, request, response):
         self.get_logger().info(f'Incoming request\nimage_topic: ${request.image_topic}')
         response.path = '/this path does not exist yet'
+        time.sleep(2)
         return response
 
 
