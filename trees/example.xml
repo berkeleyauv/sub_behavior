@@ -6,7 +6,7 @@
             <!-- Pinged at around 10Hz -->
             <RandomFailure probability="0.01"/>
             <!-- Test the service node -->
-            <SnapPhotoNode server_name="/snap_photo" server_timeout="0" path="dsadsa"/>
+            <SnapPhotoNode server_name="/snap_photo" server_timeout="0" topic="test_topic"/>
             <!-- Test the action node -->
             <MoveDistanceNode server_name="/move_distance" server_timeout="100" cancel_timeout="0" distances="{distances}"/>
         </ReactiveSequence>

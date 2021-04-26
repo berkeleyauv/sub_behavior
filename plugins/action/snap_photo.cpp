@@ -17,13 +17,13 @@ public:
 
   static PortsList providedPorts()
   {
-    return providedBasicPorts({InputPort<std::string>("path")});
+    return providedBasicPorts({InputPort<std::string>("topic")});
   }
 
   SnapPhotoService::Request::SharedPtr populate_request() override
   {
     SnapPhotoService::Request::SharedPtr request = std::make_shared<SnapPhotoService::Request>();
-    request->image_topic = "test_request";
+    getInput("topic", request->image_topic);
     return request;
   }
 
