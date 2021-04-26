@@ -3,7 +3,7 @@
 import time
 import threading
 
-from sub_behavior_interfaces.action import MoveDistance
+from sub_interfaces.action import MoveDistance
 
 import rclpy
 from rclpy.action import ActionServer, CancelResponse, GoalResponse

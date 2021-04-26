@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from sub_behavior_interfaces.srv import SnapPhoto
+from sub_interfaces.srv import SnapPhoto
 
 import rclpy
 from rclpy.node import Node
