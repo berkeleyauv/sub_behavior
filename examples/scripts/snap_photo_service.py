@@ -14,7 +14,7 @@ class SnapPhotoService(Node):
         self.srv = self.create_service(SnapPhoto, 'snap_photo', self.snap_photo_callback)
 
     def snap_photo_callback(self, request, response):
-        self.get_logger().info(f'Incoming request\nimage_topic: ${request.image_topic}')
+        self.get_logger().info(f'Incoming request\nimage_topic: {request.image_topic}')
         response.path = '/this path does not exist yet'
         time.sleep(2)
         return response

@@ -17,7 +17,7 @@ from rclpy.executors import MultiThreadedExecutor
 class MoveDistanceActionServer(Node):
 
     def __init__(self):
-        super().__init__('minimal_action_server')
+        super().__init__('move_distance_action')
         self._goal_lock = threading.Lock()
         self._goal_handle = None
         self._action_server = ActionServer(
