@@ -1,11 +1,11 @@
-#include "sub_behavior_interfaces/action/move_distance.hpp"
+#include "sub_interfaces/action/move_distance.hpp"
 #include "behaviortree_cpp_v3/bt_factory.h"
 #include "behavior_tree/BtAction.hpp"
 
 #include "geometry_msgs/msg/vector3.hpp"
 
 using namespace BT;
-using MoveDistanceAction = sub_behavior_interfaces::action::MoveDistance;
+using MoveDistanceAction = sub_interfaces::action::MoveDistance;
 
 class MoveDistanceNode : public BtAction<MoveDistanceAction>
 {
